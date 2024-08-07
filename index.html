@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LangitMalam Bg Eraser</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,700;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,800;1,800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen m-0 overflow-x-hidden">
+
+    <!-- Navbar Toggle Button -->
+    <button id="menu-button" class="absolute top-4 right-4 text-white focus:outline-none z-50 toggle-button p-3 bg-blue-600 hover:bg-blue-700">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+    </button>
+
+ <!-- Full-Screen Navbar -->
+ <nav id="navbar" class="navbar-custom p-4">
+   <div class="container">
+     <div class="nav-item">
+       <a href="#tentang">Tentang BG Eraser</a><hr style="height: 2px; background: #ccc">
+     </div>
+     
+     <div class="nav-item">
+       <a href="#hubungi">Hubungi Kami</a><hr style="height: 2px; background: #ccc">
+     </div>
+     
+     <div class="nav-item">
+       <a href="https://langitmalam-downloader.vercel.app">LangitMalam Downloader</a>
+       <hr style="height: 2px; background: #ccc">
+     </div>
+     <hr>
+   </div>
+   <!-- Footer Button at the bottom of Navbar -->
+   <a href="index.html" class="button">Back To Home Page</a>
+ </nav>
+    <br><br>
+
+    <!-- Main Content Area -->
+    <div class="content text-center mt-10 max-w-screen-md mx-4">
+        <h3 style="color: #454545;" class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600">
+            Make your photos amazing using AI
+        </h3>
+<p style="font-size: 14px; margin-top: 20px;">
+  Create beautiful product photos  generated backgrounds removed that’s as easy as snapping a photo!
+</p>
+    </div>
+<br>
+    <!-- Image Upload and Processing Section -->
+    <div class="flex flex-col items-center space-y-4 max-w-screen-md mx-4">
+        <input type="file" id="uploadImage" accept="image/*" class="hidden">
+       <button id="uploadButton" class="bg-blue-500 text-white py-3 px-12 text-lg rounded-full hover:bg-green-500 focus:outline-none w-full flex items-center justify-center">
+         Unggah Gambar
+       </button>
+        <button id="removeBgButton" class="bg-blue-600 text-white py-3 px-6 text-lg rounded-full hover:bg-green-500 focus:outline-none w-full flex items-center justify-center" disabled>
+            Hapus Latar
+        </button>
+      <p style="font-size: 10px">*klik unggah gambar, lalu hapus latar*</p>
+        
+        <div id="imageName" class="mt-2 text-lg font-bold text-gray-700"></div>
+        <div id="resultContainer" class="relative mt-4 p-4 bg-white shadow-lg rounded-lg w-full max-w-sm h-72 flex items-center justify-center">
+            <!-- Loading animation or result image will appear here -->
+            <img id="loadingImage" src="loading.png" alt="Loading" class="hidden absolute">
+        </div>
+        <a id="downloadLink" href="#" download class="bg-blue-600 text-white py-3 px-6 text-lg rounded-full hover:bg-green-500 focus:outline-none w-full flex items-center justify-center hidden">
+            Download
+        </a>
+    </div><br>
+
+ <div class="role-p">
+   <h2 class="dwnld">cukup sekali klik<br>hapus background<br> dalam 3 detik.</h2>
+   <p class="dwnld1">
+     Berkat API pintar kaleido, sekarang anda dapat memangkas waktu mengedit - dan memiliki waktu untuk berekreasi!
+   </p>
+<div style="display: flex; justify-content: center;">
+<img src="bgeraser.png" alt="gambar" width="300px" height="300px" style="border-radius: 7%;">
+</div><br>
+ 
+
+
+
+    <br><br>
+
+    <!-- Footer Section -->
+    <footer class="footer w-full bg-white text-gray-600 py-4">
+        <div class="container mx-auto flex flex-col items-center justify-center">
+            <!-- Social Media Icons -->
+            <div class="social-icons flex space-x-4 mb-2">
+                <a href="#" class="social-icon">
+                    <img src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png&color=000000" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com/Pperompak?mibextid=kFxxJD" class="social-icon">
+                    <img src="https://img.icons8.com/?size=100&id=uLWV5A9vXIPu&format=png&color=000000" alt="Facebook">
+                </a>
+                <a href="https://wa.me/qr/ACAFKWWMZGUTH1" class="social-icon">
+                    <img src="https://img.icons8.com/?size=100&id=16713&format=png&color=1f152e" alt="WhatsApp">
+                </a>
+            </div>
+            <!-- Credit -->
+            <p class="credit text-center text-sm">
+                &copy; 2024 LangitMalam x MhAminn.
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

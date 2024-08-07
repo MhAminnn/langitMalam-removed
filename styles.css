@@ -1,0 +1,204 @@
+/* Menggunakan font yang ditentukan */
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif; /* Menetapkan font */
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+/* Gaya untuk Navbar */
+.navbar-custom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100vh;
+    background-color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 40;
+}
+
+.navbar-custom.open {
+    transform: translateY(0);
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.nav-item {
+    margin: 0; /* Menghapus jarak antar item */
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #454545;
+    font-weight: 700; /* Berat font */
+    font-size: 25px; /* Ukuran font */
+    line-height: 36px; /* Jarak baris */
+    display: block;
+    padding: 8px 0;
+}
+
+.nav-item a:hover {
+    color: black;
+}
+
+/* Gaya untuk Footer Button */
+.button {
+    background-color: #000EEE;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    width: 90%;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 20px;
+}
+
+/* Gaya untuk Tombol Toggle */
+.toggle-button {
+    background-color: #333;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+}
+
+
+
+/* Gaya untuk Jarak antara Navbar dan Judul */
+.content {
+    margin-top: 60px; /* Sesuaikan berdasarkan tinggi tombol toggle */
+}
+
+#resultContainer img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+#loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #007bff;
+}
+
+#loading::before {
+    content: '...';
+    animation: dot-flashing 1s infinite linear;
+}
+
+@keyframes dot-flashing {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Gaya untuk elemen lainnya */
+h3 {
+    color: #454545;
+}
+
+p {
+    color: #54616C;
+    font-size: 12px;
+}
+
+#resultContainer {
+    position: relative;
+}
+
+#loadingImage {
+    width: 50px;
+    height: 50px;
+}
+
+#imageName {
+    font-size: 12px;
+}
+
+/* Gaya untuk Footer */
+.footer {
+    background-color: #ffffff;
+    color: #454545;
+    padding: 1rem;
+    text-align: center;
+}
+
+.footer .social-icons {
+    margin-bottom: 1rem;
+}
+
+.footer .social-icon img {
+    width: 40px;
+    height: auto;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.footer .social-icon img:hover {
+    filter: none;
+}
+
+.footer .credit {
+    font-size: 0.875rem;
+}
+
+.dwnld {
+  font-family: 'plus jakarta sans';
+  font-weight: 600;
+  font-style: normal;
+  margin-left: 6px;
+  padding-left: 6px;
+  padding-bottom: 10px;
+  font-size: 28px;
+  color: #454545;
+
+}
+
+.dwnld1 {
+  margin-left: 9px;
+  font-size: 12px;
+  margin-left: 10px;
+  padding: 5px;
+  color: #54616C;
+  padding-bottom: 20px;
+}
+
+/* Gaya tombol */
+#uploadButton,
+#removeBgButton {
+    background-color: #000EEE; /* Mengatur warna latar belakang tombol */
+    color: white; /* Warna teks tombol */
+}
+
+/* Gaya tombol saat hover */
+#uploadButton:hover,
+#removeBgButton:hover {
+    background-color: #1f152e; /* Warna latar belakang saat hover (contoh: hijau) */
+}
